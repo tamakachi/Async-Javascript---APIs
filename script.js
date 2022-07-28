@@ -8,10 +8,13 @@ const request = new XMLHttpRequest();
 
 request.addEventListener("readystatechange",()=>{
     console.log(request.readyState)
-    if (request.readyState===4){
-        
+    // .readyState 4 means request completed, status 200 means the data was retrieved successfully
+    if (request.readyState === 4 && request.status === 200){
+
         //logs the response of the request, in this case it's a JSON
         console.log(request.responseText)
+    } else if (request.readyState === 4){
+        console.log("Request failed because of Error: " + request.status)
     }
 })
 

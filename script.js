@@ -13,6 +13,8 @@ request.addEventListener("readystatechange",()=>{
 
         //logs the response of the request, in this case it's a JSON
         console.log(request.responseText)
+
+        // If the state indicates request completed, but the status isn't success, log an error
     } else if (request.readyState === 4){
         console.log("Request failed because of Error: " + request.status)
     }

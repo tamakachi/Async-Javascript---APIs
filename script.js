@@ -8,6 +8,11 @@ const request = new XMLHttpRequest();
 
 request.addEventListener("readystatechange",()=>{
     console.log(request.readyState)
+    if (request.readyState===4){
+        
+        //logs the response of the request, in this case it's a JSON
+        console.log(request.responseText)
+    }
 })
 
 // Sets the endpoint and type of request for the http request
